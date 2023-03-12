@@ -5,7 +5,6 @@ import { apiClient } from "./api/api";
 import { useState, Fragment, FormEvent } from "react";
 import Input from "@/components/ui/Input";
 import { Dialog, Transition } from "@headlessui/react";
-import Router from "next/router";
 
 type Patient = {
   id: number;

@@ -37,7 +37,7 @@ export default function Appointments({ appointments }: AppointmentsProps) {
   }
 
   function formatDate(date: string) {
-    return new Date(date).toLocaleDateString()
+    return new Date(date).toLocaleDateString();
   }
 
   async function submit() {
@@ -156,10 +156,7 @@ export default function Appointments({ appointments }: AppointmentsProps) {
             </tr>
           }
           data={list.map((appointment, index) => (
-            <tr
-              className="bg-white border-b "
-              key={index}
-            >
+            <tr className="bg-white border-b " key={index}>
               <td
                 scope="row"
                 className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
@@ -167,6 +164,11 @@ export default function Appointments({ appointments }: AppointmentsProps) {
                 {appointment.patientId}
               </td>
               <td className="px-6 py-4">{formatDate(appointment.startDate)}</td>
+              <td className="px-6 py-4 text-right">
+                <a href={`/appointments/appointment/${appointment.id}`} className="font-medium text-pink-600">
+                  Detalhes
+                </a>
+              </td>
             </tr>
           ))}
         />
