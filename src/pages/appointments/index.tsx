@@ -36,6 +36,10 @@ export default function Appointments({ appointments }: AppointmentsProps) {
     setIsOpen(true);
   }
 
+  function formatDate(date: string) {
+    return new Date(date).toLocaleDateString()
+  }
+
   async function submit() {
     try {
       const data = {
@@ -66,7 +70,7 @@ export default function Appointments({ appointments }: AppointmentsProps) {
           <button
             type="button"
             onClick={openModal}
-            className="flex flex-end mb-5 text-white bg-pink-600 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2"
+            className="flex-end mb-5 text-white bg-pink-600 hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2"
           >
             Nova Consulta
           </button>
@@ -153,16 +157,16 @@ export default function Appointments({ appointments }: AppointmentsProps) {
           }
           data={list.map((appointment, index) => (
             <tr
-              className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+              className="bg-white border-b "
               key={index}
             >
               <td
                 scope="row"
-                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
               >
                 {appointment.patientId}
               </td>
-              <td className="px-6 py-4">{appointment.startDate}</td>
+              <td className="px-6 py-4">{formatDate(appointment.startDate)}</td>
             </tr>
           ))}
         />
