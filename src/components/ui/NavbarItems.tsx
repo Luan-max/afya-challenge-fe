@@ -28,7 +28,7 @@ export default function NavbarItems(props: NavbarItemsProps) {
   return (
     <li
       onClick={props.onClick}
-      className={`hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer`}
+      className={`hover:bg-gray-100 cursor-pointer`}
     >
       {props.url ? (
         <Link href={props.url} legacyBehavior>

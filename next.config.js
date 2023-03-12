@@ -5,7 +5,7 @@ const nextConfig = {
     domains: [
       'cardiopapers.com.br'
     ]
-  }
+  },
 }
 
 module.exports = nextConfig

@@ -8,10 +8,10 @@ export default function Topbar(props: TopbarProps) {
   return (
     <div className={`flex`}>
       <div>
-        <h1 className={`font-black text-3xl text-gray-900 dark:text-gray-100`}>
+        <h1 className={`font-black 0 text-3xl text-gray-900 `}>
           {props.title}
         </h1>
-        <h2 className={`font-light text-sm text-gray-600 dark:text-gray-300`}>
+        <h2 className={`font-light  text-sm text-gray-600 `}>
           {props.subtitle}
         </h2>
       </div>

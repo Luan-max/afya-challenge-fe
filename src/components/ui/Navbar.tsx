@@ -1,8 +1,7 @@
 import NavbarItems from "./NavbarItems";
 import {
-  DigitalWalletIcon,
-  HomeIcon,
-  SettingsIcon,
+  PatientsIcon,
+  AppoinmentsIcon,
 } from "../icons";
 
 import Image from "next/image";
@@ -29,14 +28,14 @@ export default function Navbar() {
         <NavbarItems
           url="/"
           text="Pacientes"
-          icon={HomeIcon}
-          className={`hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black`}
+          icon={PatientsIcon}
+          className={`hover:bg-pink-600 hover:text-white`}
         />
         <NavbarItems
-          url="/settings"
+          url="/appointments"
           text="Agendamentos"
-          icon={SettingsIcon}
-          className={`hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black`}
+          icon={AppoinmentsIcon}
+          className={`hover:bg-pink-600 hover:text-white`}
         />
       </ul>
     </aside>
