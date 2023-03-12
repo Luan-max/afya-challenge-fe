@@ -46,6 +46,10 @@ export default function Home({ patients }: PatientProps) {
     setIsOpen(true);
   }
 
+  function formatDate(date: string) {
+    return new Date(date).toLocaleDateString();
+  }
+
   async function submit() {
     try {
       const data = {
@@ -211,6 +215,9 @@ export default function Home({ patients }: PatientProps) {
             props={
               <tr>
                 <th scope="col" className="px-6 py-3">
+                  Identificador do Paciente
+                </th>
+                <th scope="col" className="px-6 py-3">
                   Nome
                 </th>
                 <th scope="col" className="px-6 py-3">
@@ -226,16 +233,22 @@ export default function Home({ patients }: PatientProps) {
             }
             data={list.map((patient, index) => (
               <tr
-                className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+                className="bg-white border-b"
                 key={index}
               >
                 <td
                   scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="px-6 py-4 font-medium text-gray-900"
+                >
+                  {patient.id}
+                </td>
+                <td
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                 >
                   {patient.name}
                 </td>
-                <td className="px-6 py-4">{patient.birthday}</td>
+                <td className="px-6 py-4">{formatDate(patient.birthday)}</td>
                 <td className="px-6 py-4">
                   {patient.gender === "masculine" ? "Masculino" : "Feminino"}
                 </td>
