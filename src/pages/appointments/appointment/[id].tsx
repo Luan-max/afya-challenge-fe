@@ -44,6 +44,7 @@ interface AppointmentDetails {
 
 export default function Appointment(data: {
   data: {
+    [x: string]: any;
     patient: PatientProps;
     notes: NotesProps[];
   };
