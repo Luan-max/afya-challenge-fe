@@ -221,7 +221,11 @@ export default function Appointment(data: {
   );
 }
 
-export const getServerSideProps = async ({ params }) => {
+interface ServerSideProps {
+  params: any;
+}
+
+export const getServerSideProps = async ({ params }: ServerSideProps) => {
   const api = apiClient();
 
   const response = await api.get(`/appointments/${params.id}`);
